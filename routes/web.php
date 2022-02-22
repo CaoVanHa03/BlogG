@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/xin-chao', function () {
+    return view('xin chào');
+});
+
+route::get('xin-chao/{caovanha}' , function($ten){
+    return 'xin chaof banj' . $ten;
+});
+route::get('chao/{caovanha}/{namsinh}' , function($ten, $namsinh){
+    return 'xin chaof banj' . $ten . '<br>Cos nam sinh la: ' . $namsinh;
 });
