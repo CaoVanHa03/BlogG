@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/xin-chao', function () {
-    return view('xin chào');
-});
+
 
 route::get('xin-chao/{caovanha}' , function($ten){
-    return 'xin chaof banj' . $ten;
+    return 'xin chao ban' . $ten;
 });
-route::get('chao/{caovanha}/{namsinh}' , function($ten, $namsinh){
-    return 'xin chaof banj' . $ten . '<br>Cos nam sinh la: ' . $namsinh;
-});
+route::get('xin-chaoo/{chengu}/{namsinh?}/{quequan?}' , function($ten, $namsinh='1988', $quequan='Huế'){
+    return 'Xin chào bạn:' .$ten .'<br>Năm sinh :' . $namsinh  . '<br>Quê quán :' .$quequan;
+})->where(['ten' => '[a-z]+' , 'namsinh' => '[0-9]+' , 'quequan' => '[a-z]+' ]);
